@@ -1,0 +1,28 @@
+{
+  "name": "playwright-cucumber-framework",
+  "version": "1.0.0",
+  "description": "Test automation framework using Playwright + TypeScript + Cucumber",
+    "scripts": {
+      "install:browsers": "npx playwright install chromium firefox webkit",
+      "install:chrome": "npx playwright install chromium",
+      "test": "cucumber-js --config cucumber.config.js",
+      "test:headed": "cross-env HEADLESS=false npm test",
+      "test:debug": "PWDEBUG=1 npm test",
+      "test:chrome": "cross-env BROWSER=chromium npm test",
+      "test:chrome:headed": "cross-env BROWSER=chromium HEADLESS=false npm test",
+      "test:staging": "cross-env ENV=staging npm test",
+      "test:chrome:staging": "cross-env BROWSER=chromium ENV=staging npm test"
+    },
+  "dependencies": {
+    "@cucumber/cucumber": "^11.0.1",
+    "@cucumber/pretty-formatter": "^1.0.1",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.48.2",
+    "@types/node": "^22.7.5",
+    "cross-env": "^10.1.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
